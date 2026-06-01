@@ -1,0 +1,939 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Seja sócio investidor da Segura Box — o mercado de self storage cresce 15% ao ano no Brasil. Conheça a oportunidade.">
+  <title>Segura Box — Seja Sócio Investidor</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    :root {
+      --deep-navy:      #0A1F44;
+      --canvas-white:   #ffffff;
+      --brand-blue:     #1A56DB;
+      --surface-steel:  #1E2D4A;
+      --muted-slate:    #6B7A99;
+      --whisper-blue:   #F0F4FF;
+      --light-ice:      #E8EFFC;
+      --anchor-dark:    #05102B;
+      --sky-mint:       #C7F0E8;
+      --cloud-blue:     #D6E8FF;
+      --pale-gold:      #FFF3CC;
+      --soft-periwinkle:#DDE3FD;
+      --steel-indigo:   #2E3F7A;
+      --growth-gold:    #F5B731;
+      --expansion-teal: #2EC4B6;
+      --capital-blue:   #328efa;
+      --safety-green:   #3DB87A;
+
+      --sky-glow:   radial-gradient(80% 110% at 50% 60%, rgba(26,86,219,0.15) 0%, rgba(144,195,255,0.10) 50%, rgba(240,244,255,0) 100%);
+      --trust-white:radial-gradient(386% 163% at -13% -17%, rgba(255,255,255,0.9) 0%, rgba(224,236,255,0.6) 40%, rgba(144,195,255,0.3) 100%);
+
+      --shadow-card:  rgba(10,31,68,0.04) 0px -6px 6px 0px, rgba(10,31,68,0.02) 0px -23px 9px 0px;
+      --shadow-header:rgba(10,31,68,0.06) 0px 0px 1px 0px, rgba(10,31,68,0.05) 1px 1px 1px 0px, rgba(10,31,68,0.03) 2px 3px 2px 0px, rgba(10,31,68,0.01) 4px 4px 2px 0px;
+      --shadow-btn:   rgba(10,31,68,0.06) 0px 1px 2px 0px, rgba(10,31,68,0.05) 0px 4px 8px 0px;
+
+      --font: 'Inter', system-ui, -apple-system, sans-serif;
+      --r-card: 12px;
+      --r-btn:  8px;
+    }
+
+    body {
+      font-family: var(--font);
+      color: var(--deep-navy);
+      background: var(--canvas-white);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    /* ─── HEADER ─────────────────────────────────────────────── */
+    .header {
+      position: fixed;
+      inset: 0 0 auto 0;
+      z-index: 100;
+      background: var(--canvas-white);
+      box-shadow: var(--shadow-header);
+    }
+
+    .header__inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 0;
+    }
+
+    .header__logo { height: 34px; width: auto; display: block; }
+
+    /* ─── BUTTONS ────────────────────────────────────────────── */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      border: none;
+      cursor: pointer;
+      font-family: var(--font);
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 1;
+      border-radius: var(--r-btn);
+      padding: 12px 20px;
+      text-decoration: none;
+      transition: transform .15s, opacity .15s, background .15s;
+      white-space: nowrap;
+    }
+
+    .btn--primary {
+      background: var(--brand-blue);
+      color: var(--canvas-white);
+      box-shadow: var(--shadow-btn);
+    }
+    .btn--primary:hover { opacity: .88; transform: translateY(-1px); }
+
+    .btn--light {
+      background: var(--canvas-white);
+      color: var(--anchor-dark);
+      box-shadow: var(--shadow-btn);
+    }
+    .btn--light:hover { background: var(--light-ice); transform: translateY(-1px); }
+
+    .btn--lg { font-size: 17px; padding: 14px 28px; }
+
+    /* ─── HERO ───────────────────────────────────────────────── */
+    .hero {
+      position: relative;
+      min-height: 100svh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      padding-top: 62px;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: var(--sky-glow);
+      pointer-events: none;
+    }
+
+    .hero__content {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 88px 0 96px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .hero__badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--light-ice);
+      color: var(--brand-blue);
+      border-radius: var(--r-card);
+      padding: 8px 14px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      margin-bottom: 28px;
+    }
+
+    .hero__badge-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--brand-blue);
+      flex-shrink: 0;
+    }
+
+    .hero__headline {
+      font-size: 56px;
+      font-weight: 900;
+      line-height: 1.0;
+      letter-spacing: -2.24px;
+      color: var(--deep-navy);
+      margin-bottom: 20px;
+    }
+
+    .hero__headline span {
+      color: var(--brand-blue);
+    }
+
+    .hero__sub {
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 1.4;
+      letter-spacing: -.2px;
+      color: var(--muted-slate);
+      max-width: 480px;
+      margin-bottom: 36px;
+    }
+
+    .hero__trust {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      margin-top: 48px;
+      padding-top: 40px;
+      border-top: 1px solid rgba(10,31,68,.06);
+    }
+
+    .hero__trust-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--muted-slate);
+      letter-spacing: .01em;
+    }
+
+    .hero__trust-icon {
+      width: 20px;
+      height: 20px;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    /* ─── MARKET SECTION ─────────────────────────────────────── */
+    .market {
+      background: var(--whisper-blue);
+      padding: 88px 0 80px;
+    }
+
+    .section-eyebrow {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--brand-blue);
+      margin-bottom: 10px;
+    }
+
+    .section-title {
+      font-size: 44px;
+      font-weight: 700;
+      line-height: 1.1;
+      letter-spacing: -1.32px;
+      color: var(--deep-navy);
+      max-width: 580px;
+      margin-bottom: 48px;
+    }
+
+    .metrics-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-bottom: 48px;
+    }
+
+    .metric-card {
+      background: var(--canvas-white);
+      border-radius: var(--r-card);
+      padding: 20px;
+      box-shadow: var(--shadow-card);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .metric-card__accent {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+      flex-shrink: 0;
+    }
+
+    .metric-card__value {
+      font-size: 36px;
+      font-weight: 700;
+      line-height: 1.0;
+      letter-spacing: -.72px;
+      color: var(--deep-navy);
+      margin-bottom: 6px;
+    }
+
+    .metric-card__label {
+      font-size: 14px;
+      line-height: 1.3;
+      letter-spacing: .025em;
+      color: var(--muted-slate);
+    }
+
+    /* ─── GALLERY ─────────────────────────────────────────────── */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+
+    .gallery-grid__item {
+      overflow: hidden;
+      border-radius: var(--r-card);
+    }
+
+    .gallery-grid__img {
+      width: 100%;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+      display: block;
+      transition: transform .4s ease;
+    }
+
+    .gallery-grid__item:hover .gallery-grid__img {
+      transform: scale(1.04);
+    }
+
+    /* ─── FORM SECTION ───────────────────────────────────────── */
+    .form-section {
+      background: var(--deep-navy);
+      padding: 96px 0 80px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .form-section::before {
+      content: '';
+      position: absolute;
+      width: 700px;
+      height: 700px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(50,142,250,.09) 0%, transparent 65%);
+      top: -280px;
+      right: -120px;
+      pointer-events: none;
+    }
+
+    .form-section::after {
+      content: '';
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(26,86,219,.07) 0%, transparent 65%);
+      bottom: -160px;
+      left: -80px;
+      pointer-events: none;
+    }
+
+    .form-section__inner {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .form-section__logo {
+      height: 36px;
+      width: auto;
+      display: block;
+      margin-bottom: 36px;
+    }
+
+    .form-section__title {
+      font-size: 44px;
+      font-weight: 700;
+      line-height: 1.1;
+      letter-spacing: -1.32px;
+      color: var(--canvas-white);
+      text-align: center;
+      max-width: 540px;
+      margin-bottom: 12px;
+    }
+
+    .form-section__sub {
+      font-size: 16px;
+      line-height: 1.4;
+      color: var(--muted-slate);
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .form-card {
+      background: var(--surface-steel);
+      border-radius: var(--r-card);
+      padding: 32px;
+      width: 100%;
+      max-width: 560px;
+      border: 1px solid rgba(255,255,255,.04);
+    }
+
+    .form-grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .form-field {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-bottom: 16px;
+    }
+
+    .form-field--last { margin-bottom: 0; }
+
+    .form-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--muted-slate);
+    }
+
+    .form-input,
+    .form-select,
+    .form-textarea {
+      background: var(--steel-indigo);
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: var(--r-card);
+      padding: 12px 16px;
+      font-family: var(--font);
+      font-size: 14px;
+      line-height: 1.3;
+      color: var(--canvas-white);
+      width: 100%;
+      outline: none;
+      transition: border-color .2s, box-shadow .2s;
+      appearance: none;
+      -webkit-appearance: none;
+    }
+
+    .form-input::placeholder,
+    .form-textarea::placeholder { color: rgba(107,122,153,.45); }
+
+    .form-input:focus,
+    .form-select:focus,
+    .form-textarea:focus {
+      border-color: rgba(26,86,219,.6);
+      box-shadow: 0 0 0 3px rgba(26,86,219,.12);
+    }
+
+    .form-input.is-error,
+    .form-select.is-error,
+    .form-textarea.is-error {
+      border-color: rgba(239,68,68,.55);
+    }
+
+    .form-error-msg {
+      font-size: 11px;
+      color: #f87171;
+      display: none;
+      letter-spacing: .01em;
+    }
+
+    .form-error-msg.is-visible { display: block; }
+
+    .form-select-wrap { position: relative; }
+
+    .form-select-wrap::after {
+      content: '';
+      position: absolute;
+      right: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 0;
+      height: 0;
+      border-left: 4px solid transparent;
+      border-right: 4px solid transparent;
+      border-top: 5px solid var(--muted-slate);
+      pointer-events: none;
+    }
+
+    .form-select option { background: var(--surface-steel); }
+
+    .form-textarea {
+      resize: vertical;
+      min-height: 96px;
+    }
+
+    .form-actions { margin-top: 24px; }
+    .form-actions .btn { width: 100%; }
+
+    .form-success {
+      display: none;
+      text-align: center;
+      padding: 16px 0 8px;
+    }
+
+    .form-success.is-visible { display: block; }
+
+    .form-success__icon {
+      width: 52px;
+      height: 52px;
+      background: rgba(61,184,122,.14);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 16px;
+    }
+
+    .form-success__title {
+      font-size: 24px;
+      font-weight: 700;
+      letter-spacing: -.26px;
+      color: var(--canvas-white);
+      margin-bottom: 8px;
+    }
+
+    .form-success__text {
+      font-size: 14px;
+      color: var(--muted-slate);
+      line-height: 1.5;
+    }
+
+    /* ─── FOOTER ─────────────────────────────────────────────── */
+    .footer {
+      background: var(--anchor-dark);
+      padding: 24px 0;
+    }
+
+    .footer__inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .footer__logo { height: 22px; width: auto; opacity: .45; }
+
+    .footer__text {
+      font-size: 12px;
+      letter-spacing: .025em;
+      color: rgba(107,122,153,.55);
+    }
+
+    /* ─── SCROLL REVEAL ──────────────────────────────────────── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity .65s ease, transform .65s ease;
+    }
+
+    .reveal.is-visible { opacity: 1; transform: none; }
+
+    .reveal-d1 { transition-delay: .1s; }
+    .reveal-d2 { transition-delay: .2s; }
+    .reveal-d3 { transition-delay: .3s; }
+    .reveal-d4 { transition-delay: .4s; }
+
+    /* ─── RESPONSIVE ─────────────────────────────────────────── */
+    @media (max-width: 960px) {
+      .hero__headline { font-size: 44px; letter-spacing: -1.32px; }
+      .section-title  { font-size: 36px; letter-spacing: -.72px; }
+      .form-section__title { font-size: 36px; letter-spacing: -.72px; }
+      .metrics-row { grid-template-columns: repeat(2, 1fr); }
+      .hero__trust { gap: 16px; flex-wrap: wrap; justify-content: center; }
+    }
+
+    /* ─── FLOATING WHATSAPP BUTTON ──────────────────────────── */
+    .fab-wa {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      z-index: 200;
+      width: 58px;
+      height: 58px;
+      background: #25D366;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: rgba(37,211,102,.35) 0px 6px 20px, rgba(0,0,0,.18) 0px 2px 8px;
+      text-decoration: none;
+      transition: transform .2s, box-shadow .2s;
+    }
+
+    .fab-wa:hover {
+      transform: scale(1.1);
+      box-shadow: rgba(37,211,102,.5) 0px 8px 28px, rgba(0,0,0,.2) 0px 4px 12px;
+    }
+
+    .fab-wa__pulse {
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      background: #25D366;
+      animation: wa-pulse 2.4s ease-out infinite;
+      z-index: -1;
+    }
+
+    @keyframes wa-pulse {
+      0%   { transform: scale(1);   opacity: .55; }
+      70%  { transform: scale(1.45); opacity: 0;  }
+      100% { transform: scale(1.45); opacity: 0;  }
+    }
+
+    @media (max-width: 640px) {
+      .container { padding: 0 20px; }
+
+      .hero__headline { font-size: 36px; letter-spacing: -.72px; }
+      .hero__sub      { font-size: 17px; }
+      .hero__badge    { font-size: 11px; }
+
+      .section-title  { font-size: 28px; letter-spacing: -.48px; }
+      .form-section__title { font-size: 28px; letter-spacing: -.48px; }
+
+      .metrics-row    { gap: 10px; }
+      .metric-card__value { font-size: 28px; }
+
+      .gallery-grid   { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+
+      .form-grid-2    { grid-template-columns: 1fr; }
+      .form-card      { padding: 24px 20px; }
+
+      .footer__inner  { flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ─── HEADER ──────────────────────────────────────────────── -->
+  <header class="header">
+    <div class="container">
+      <div class="header__inner">
+        <img src="assets/logo%20segura%20box.png" alt="Segura Box" class="header__logo">
+        <a href="#contato" class="btn btn--primary">Quero investir</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ─── DOBRA 1 — HERO ─────────────────────────────────────── -->
+    <section class="hero" id="hero">
+      <div class="container">
+        <div class="hero__content">
+
+          <div class="hero__badge reveal">
+            <span class="hero__badge-dot"></span>
+            Oportunidade de Parceria
+          </div>
+
+          <h1 class="hero__headline reveal reveal-d1">
+            Seja sócio investidor<br>da <span>Segura Box</span>
+          </h1>
+
+          <p class="hero__sub reveal reveal-d2">
+            O mercado de self storage cresce 15% ao ano no Brasil. Faça parte com uma estrutura sólida, rentável e em plena expansão.
+          </p>
+
+          <div class="reveal reveal-d3">
+            <a href="#contato" class="btn btn--primary btn--lg">
+              Quero saber mais
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+          </div>
+
+          <div class="hero__trust reveal reveal-d4">
+            <div class="hero__trust-item">
+              <div class="hero__trust-icon" style="background:rgba(61,184,122,.12);">
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                  <path d="M2 6L5 9L10 3" stroke="#3DB87A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              Estrutura consolidada
+            </div>
+            <div class="hero__trust-item">
+              <div class="hero__trust-icon" style="background:rgba(50,142,250,.12);">
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                  <path d="M2 9L5 5L7.5 7L10 3" stroke="#328efa" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              Mercado em expansão
+            </div>
+            <div class="hero__trust-item">
+              <div class="hero__trust-icon" style="background:rgba(245,183,49,.12);">
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                  <circle cx="6" cy="6" r="4" stroke="#F5B731" stroke-width="1.4"/>
+                  <path d="M6 4V6.5L7.5 8" stroke="#F5B731" stroke-width="1.4" stroke-linecap="round"/>
+                </svg>
+              </div>
+              Retorno previsível
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── DOBRA 2 — MERCADO + GALERIA ───────────────────────── -->
+    <section class="market" id="mercado">
+      <div class="container">
+
+        <div class="reveal">
+          <p class="section-eyebrow">O Mercado</p>
+          <h2 class="section-title">Self storage em crescimento acelerado no Brasil</h2>
+        </div>
+
+        <div class="metrics-row">
+
+          <div class="metric-card reveal reveal-d1">
+            <div class="metric-card__accent" style="background:rgba(245,183,49,.12);">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                <path d="M2 13L6 8L9 10.5L13 5L16 7" stroke="#F5B731" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <span class="metric-card__value">R$2,8bi</span>
+            <span class="metric-card__label">Tamanho estimado do mercado no Brasil</span>
+          </div>
+
+          <div class="metric-card reveal reveal-d2">
+            <div class="metric-card__accent" style="background:rgba(46,196,182,.12);">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                <path d="M3 14L7 9L11 11.5L15 4" stroke="#2EC4B6" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <span class="metric-card__value">+15%</span>
+            <span class="metric-card__label">Crescimento anual do setor nos últimos 5 anos</span>
+          </div>
+
+          <div class="metric-card reveal reveal-d3">
+            <div class="metric-card__accent" style="background:rgba(50,142,250,.12);">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                <rect x="2" y="5" width="14" height="9" rx="1.5" stroke="#328efa" stroke-width="1.5"/>
+                <path d="M6 5V14M12 5V14" stroke="#328efa" stroke-width="1.5"/>
+                <path d="M2 9H16" stroke="#328efa" stroke-width="1.5"/>
+              </svg>
+            </div>
+            <span class="metric-card__value">+1.200</span>
+            <span class="metric-card__label">Unidades em operação em todo o país</span>
+          </div>
+
+          <div class="metric-card reveal reveal-d4">
+            <div class="metric-card__accent" style="background:rgba(61,184,122,.12);">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                <path d="M9 2L10.5 6H15L11.5 8.5L13 13L9 10.5L5 13L6.5 8.5L3 6H7.5L9 2Z" stroke="#3DB87A" stroke-width="1.4" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <span class="metric-card__value">85%</span>
+            <span class="metric-card__label">Taxa média de ocupação do setor no Brasil</span>
+          </div>
+
+        </div>
+
+        <div class="gallery-grid reveal">
+          <div class="gallery-grid__item">
+            <img src="assets/Fotos%20box/faxada.webp"  alt="Fachada Segura Box" class="gallery-grid__img">
+          </div>
+          <div class="gallery-grid__item">
+            <img src="assets/Fotos%20box/1.webp"       alt="Boxes de armazenamento" class="gallery-grid__img">
+          </div>
+          <div class="gallery-grid__item">
+            <img src="assets/Fotos%20box/2.webp"       alt="Corredor da unidade" class="gallery-grid__img">
+          </div>
+          <div class="gallery-grid__item">
+            <img src="assets/Fotos%20box/3.webp"       alt="Interior Segura Box" class="gallery-grid__img">
+          </div>
+          <div class="gallery-grid__item">
+            <img src="assets/Fotos%20box/4.webp"       alt="Box individual" class="gallery-grid__img">
+          </div>
+          <div class="gallery-grid__item">
+            <img src="assets/Fotos%20box/5.webp"       alt="Área de acesso" class="gallery-grid__img">
+          </div>
+          <div class="gallery-grid__item">
+            <img src="assets/Fotos%20box/6.webp"       alt="Instalações internas" class="gallery-grid__img">
+          </div>
+          <div class="gallery-grid__item">
+            <img src="assets/Fotos%20box/7.webp"       alt="Boxes disponíveis" class="gallery-grid__img">
+          </div>
+          <div class="gallery-grid__item">
+            <img src="assets/Fotos%20box/8.webp"       alt="Estrutura interna" class="gallery-grid__img">
+          </div>
+          <div class="gallery-grid__item">
+            <img src="assets/Fotos%20box/9.webp"       alt="Unidade segura" class="gallery-grid__img">
+          </div>
+          <div class="gallery-grid__item">
+            <img src="assets/Fotos%20box/10.webp"      alt="Área de estacionamento" class="gallery-grid__img">
+          </div>
+          <div class="gallery-grid__item">
+            <img src="assets/Fotos%20box/11.webp"      alt="Monitoramento 24h" class="gallery-grid__img">
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ─── DOBRA 3 — FORMULÁRIO ───────────────────────────────── -->
+    <section class="form-section" id="contato">
+      <div class="container">
+        <div class="form-section__inner">
+
+          <img src="assets/logo%20segura%20box%20branca.png" alt="Segura Box" class="form-section__logo reveal">
+
+          <h2 class="form-section__title reveal reveal-d1">
+            Quero saber mais sobre essa oportunidade
+          </h2>
+          <p class="form-section__sub reveal reveal-d2">
+            Preencha o formulário e nossa equipe entrará em contato.
+          </p>
+
+          <div class="form-card reveal reveal-d3">
+            <form id="partnerForm" novalidate autocomplete="off">
+
+              <div class="form-grid-2">
+                <div class="form-field">
+                  <label for="nome" class="form-label">Nome completo</label>
+                  <input type="text" id="nome" name="nome" class="form-input" placeholder="Seu nome completo">
+                  <span class="form-error-msg" id="nome-error">Por favor, informe seu nome.</span>
+                </div>
+                <div class="form-field">
+                  <label for="cidade" class="form-label">Cidade</label>
+                  <input type="text" id="cidade" name="cidade" class="form-input" placeholder="Sua cidade">
+                  <span class="form-error-msg" id="cidade-error">Por favor, informe sua cidade.</span>
+                </div>
+              </div>
+
+              <div class="form-field">
+                <label for="faixa" class="form-label">Faixa de investimento disponível</label>
+                <div class="form-select-wrap">
+                  <select id="faixa" name="faixa" class="form-select">
+                    <option value="" disabled selected>Selecione uma faixa</option>
+                    <option value="ate-50k">Até R$50.000</option>
+                    <option value="50k-150k">R$50.000 – R$150.000</option>
+                    <option value="150k-500k">R$150.000 – R$500.000</option>
+                    <option value="acima-500k">Acima de R$500.000</option>
+                  </select>
+                </div>
+                <span class="form-error-msg" id="faixa-error">Por favor, selecione uma faixa.</span>
+              </div>
+
+              <div class="form-field form-field--last">
+                <label for="mensagem" class="form-label">Mensagem <span style="opacity:.5;font-weight:400;text-transform:none;letter-spacing:0;">(opcional)</span></label>
+                <textarea id="mensagem" name="mensagem" class="form-textarea" placeholder="Conte um pouco mais sobre seus objetivos…"></textarea>
+              </div>
+
+              <div class="form-actions">
+                <button type="submit" class="btn btn--light btn--lg">Enviar mensagem</button>
+              </div>
+
+            </form>
+
+            <div class="form-success" id="formSuccess">
+              <div class="form-success__icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                  <path d="M5 12L10 17L19 7" stroke="#3DB87A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <p class="form-success__title">Mensagem enviada!</p>
+              <p class="form-success__text">Obrigado pelo interesse.<br>Nossa equipe entrará em contato em breve.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ─── FLOATING WHATSAPP ──────────────────────────────────── -->
+  <a href="https://wa.me/553493375260" target="_blank" rel="noopener noreferrer"
+     class="fab-wa" aria-label="Fale conosco no WhatsApp">
+    <span class="fab-wa__pulse"></span>
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+      <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.345.223-.643.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/>
+    </svg>
+  </a>
+
+  <!-- ─── FOOTER ──────────────────────────────────────────────── -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <img src="assets/logo%20segura%20box%20branca.png" alt="Segura Box" class="footer__logo">
+        <p class="footer__text">© 2025 Segura Box — Todos os direitos reservados</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // ─── Scroll Reveal ────────────────────────────────────────────
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -32px 0px' });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // ─── Form Validation ─────────────────────────────────────────
+    const form       = document.getElementById('partnerForm');
+    const formSuccess = document.getElementById('formSuccess');
+
+    function validateField(id, errorId) {
+      const field = document.getElementById(id);
+      const error = document.getElementById(errorId);
+      const ok    = field.value.trim() !== '';
+      field.classList.toggle('is-error', !ok);
+      error.classList.toggle('is-visible', !ok);
+      return ok;
+    }
+
+    ['nome', 'cidade', 'faixa'].forEach(id => {
+      const field = document.getElementById(id);
+      const evt   = field.tagName === 'SELECT' ? 'change' : 'input';
+      field.addEventListener(evt, () => validateField(id, `${id}-error`));
+    });
+
+    const WA_NUMBER = '553493375260';
+
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      const ok = ['nome', 'cidade', 'faixa'].map(id => validateField(id, `${id}-error`)).every(Boolean);
+      if (!ok) return;
+
+      const nome   = document.getElementById('nome').value.trim();
+      const cidade = document.getElementById('cidade').value.trim();
+      const faixaEl = document.getElementById('faixa');
+      const faixa  = faixaEl.options[faixaEl.selectedIndex].text;
+      const msg    = document.getElementById('mensagem').value.trim();
+
+      const lines = [
+        'Olá! Vim pelo site e tenho interesse em ser sócio investidor da Segura Box.',
+        '',
+        `*Nome:* ${nome}`,
+        `*Cidade:* ${cidade}`,
+        `*Faixa de investimento:* ${faixa}`,
+      ];
+      if (msg) lines.push(`*Mensagem:* ${msg}`);
+
+      const text = lines.join('\n');
+      window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(text)}`, '_blank');
+
+      form.style.display = 'none';
+      formSuccess.classList.add('is-visible');
+    });
+  </script>
+
+</body>
+</html>
