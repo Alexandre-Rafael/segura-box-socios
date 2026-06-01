@@ -2,7 +2,10 @@
   "buildCommand": null,
   "outputDirectory": ".",
   "framework": null,
+  "redirects": [
+    { "source": "/", "destination": "/seja-investidor", "permanent": false }
+  ],
   "rewrites": [
-    { "source": "/(.*)", "destination": "/index.html" }
+    { "source": "/seja-investidor", "destination": "/index.html" }
   ]
 }
