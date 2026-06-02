@@ -1025,18 +1025,9 @@
         body: JSON.stringify({ nome, email, telefone, cidade, faixa, mensagem: msg }),
       }).catch(() => {});
 
-      const lines = [
-        'Olá! Vim pelo site e tenho interesse em ser sócio investidor da Segura Box.',
-        '',
-        `*Nome:* ${nome}`,
-        `*E-mail:* ${email}`,
-        `*Telefone:* ${telefone}`,
-        `*Cidade:* ${cidade}`,
-        `*Faixa de investimento:* ${faixa}`,
-      ];
-      if (msg) lines.push(`*Mensagem:* ${msg}`);
+      const text = 'Olá, vim pelo site e gostaria de mais informações sobre a parceria com a Segura Box';
 
-      window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(lines.join('\n'))}`, '_blank');
+      window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(text)}`, '_blank');
 
       form.style.display = 'none';
       formSuccess.classList.add('is-visible');
