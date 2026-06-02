@@ -122,6 +122,11 @@
     }
 
     /* ─── HERO SLIDESHOW ────────────────────────────────────── */
+    @keyframes ken-burns {
+      from { transform: scale(1.0); }
+      to   { transform: scale(1.07); }
+    }
+
     .hero__slide {
       position: absolute;
       inset: 0;
@@ -130,14 +135,17 @@
       object-fit: cover;
       object-position: center;
       opacity: 0;
-      transition: opacity 1.5s ease;
+      transform: scale(1.0);
+      transform-origin: center center;
+      transition: opacity 1.8s ease;
       z-index: 0;
       pointer-events: none;
-      will-change: opacity;
+      will-change: opacity, transform;
     }
 
     .hero__slide.is-active {
       opacity: 0.10;
+      animation: ken-burns 7s ease-in-out forwards;
     }
 
     .hero::before {
@@ -867,10 +875,19 @@
                 <div class="form-select-wrap">
                   <select id="faixa" name="faixa" class="form-select">
                     <option value="" disabled selected>Selecione uma faixa</option>
-                    <option value="ate-50k">Até R$50.000</option>
-                    <option value="50k-150k">R$50.000 – R$150.000</option>
-                    <option value="150k-500k">R$150.000 – R$500.000</option>
-                    <option value="acima-500k">Acima de R$500.000</option>
+                    <option value="0-50k">R$0 – R$50.000</option>
+                    <option value="50k-100k">R$50.000 – R$100.000</option>
+                    <option value="100k-150k">R$100.000 – R$150.000</option>
+                    <option value="150k-200k">R$150.000 – R$200.000</option>
+                    <option value="200k-250k">R$200.000 – R$250.000</option>
+                    <option value="250k-300k">R$250.000 – R$300.000</option>
+                    <option value="300k-400k">R$300.000 – R$400.000</option>
+                    <option value="400k-500k">R$400.000 – R$500.000</option>
+                    <option value="500k-600k">R$500.000 – R$600.000</option>
+                    <option value="600k-700k">R$600.000 – R$700.000</option>
+                    <option value="700k-1m">R$700.000 – R$1.000.000</option>
+                    <option value="1m-2m">R$1.000.000 – R$2.000.000</option>
+                    <option value="acima-2m">Acima de R$2.000.000</option>
                   </select>
                 </div>
                 <span class="form-error-msg" id="faixa-error">Por favor, selecione uma faixa.</span>
@@ -930,8 +947,16 @@
       let current = 0;
       setInterval(function () {
         slides[current].classList.remove('is-active');
+
         current = (current + 1) % slides.length;
-        slides[current].classList.add('is-active');
+        const next = slides[current];
+
+        // Reinicia o ken-burns para a próxima foto começar do scale(1.0)
+        next.style.animation = 'none';
+        next.offsetHeight; // força reflow
+        next.style.animation = '';
+
+        next.classList.add('is-active');
       }, 5000);
     })();
 
