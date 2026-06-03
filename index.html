@@ -922,7 +922,7 @@
   </main>
 
   <!-- ─── FLOATING WHATSAPP ──────────────────────────────────── -->
-  <a href="https://wa.me/553493375260" target="_blank" rel="noopener noreferrer"
+  <a href="https://wa.me/message/VAJFIZJBMAXPM1" target="_blank" rel="noopener noreferrer"
      class="fab-wa" aria-label="Fale conosco no WhatsApp">
     <span class="fab-wa__pulse"></span>
     <svg width="28" height="28" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
@@ -1002,7 +1002,7 @@
 
     document.getElementById('email').addEventListener('input', () => validateEmail('email', 'email-error'));
 
-    const WA_NUMBER = '553493375260';
+    const WA_LINK = 'https://wa.me/message/VAJFIZJBMAXPM1';
 
     form.addEventListener('submit', e => {
       e.preventDefault();
@@ -1025,9 +1025,7 @@
         body: JSON.stringify({ nome, email, telefone, cidade, faixa, mensagem: msg }),
       }).catch(() => {});
 
-      const text = 'Olá, vim pelo site e gostaria de mais informações sobre a parceria com a Segura Box';
-
-      window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(text)}`, '_blank');
+      window.open(WA_LINK, '_blank');
 
       form.style.display = 'none';
       formSuccess.classList.add('is-visible');
