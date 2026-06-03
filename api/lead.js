@@ -25,7 +25,7 @@ module.exports = async (req, res) => {
     });
 
     await transporter.sendMail({
-      from: `"Segura Box" <${process.env.GMAIL_USER}>`,
+      from: `"SeguraBox" <${process.env.GMAIL_USER}>`,
       to: 'matheusaveelar@gmail.com',
       subject: 'NOVA LEAD INVESTIDOR SEGURABOX',
       html: `
@@ -39,7 +39,7 @@ module.exports = async (req, res) => {
 
         <!-- Header -->
         <tr><td style="background:#1A56DB;padding:24px 32px;">
-          <p style="margin:0;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.6);">Segura Box</p>
+          <p style="margin:0;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.6);">SeguraBox</p>
           <h1 style="margin:6px 0 0;font-size:22px;font-weight:700;color:#ffffff;line-height:1.2;">Nova lead — Sócio Investidor</h1>
         </td></tr>
 
@@ -62,7 +62,7 @@ module.exports = async (req, res) => {
 
         <!-- Footer -->
         <tr><td style="background:#0A1F44;padding:16px 32px;text-align:center;">
-          <p style="margin:0;font-size:12px;color:#6B7A99;">Segura Box — Sistema de captura de leads investidores</p>
+          <p style="margin:0;font-size:12px;color:#6B7A99;">SeguraBox — Sistema de captura de leads investidores</p>
         </td></tr>
 
       </table>
