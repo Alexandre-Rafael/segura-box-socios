@@ -756,7 +756,7 @@
 
           <div class="summary-total">
             <span class="summary-total__label">Total estimado</span>
-            <span class="summary-total__value"><span id="totalVol">0,00</span><small>m³</small></span>
+            <span class="summary-total__value"><span id="totalVol">0,00</span><small>m²</small></span>
           </div>
 
           <div class="summary-rec">
@@ -820,7 +820,7 @@
   <div class="mobile-bar" id="mobileBar">
     <div>
       <p class="mobile-bar__label"><span id="mobileItems">0</span> itens selecionados</p>
-      <p class="mobile-bar__value"><span id="mobileVol">0,00</span> <small>m³</small></p>
+      <p class="mobile-bar__value"><span id="mobileVol">0,00</span> <small>m²</small></p>
     </div>
     <button type="button" class="mobile-bar__btn" id="mobileGo">Ver resumo</button>
   </div>
@@ -836,7 +836,7 @@
   </footer>
 
   <script>
-    // ─── Catálogo de itens (volumes aproximados em m³) ───────────
+    // ─── Catálogo de itens (área de chão aproximada em m²) ───────
     const CATEGORIES = [
       { id: 'moveis',    label: 'Móveis',           color: '#328efa' },
       { id: 'escritorio',label: 'Escritório',        color: '#2EC4B6' },
@@ -846,59 +846,59 @@
 
     const ITEMS = [
       // Móveis
-      { cat: 'moveis', name: 'Aparador',                 vol: 0.60, emoji: '🗄️' },
-      { cat: 'moveis', name: 'Cadeira',                  vol: 0.25, emoji: '🪑' },
-      { cat: 'moveis', name: 'Cama casal king size',     vol: 2.00, emoji: '🛏️' },
-      { cat: 'moveis', name: 'Cama casal padrão',        vol: 1.50, emoji: '🛏️' },
-      { cat: 'moveis', name: 'Cama casal queen size',    vol: 1.80, emoji: '🛏️' },
-      { cat: 'moveis', name: 'Cama solteiro',            vol: 1.00, emoji: '🛏️' },
-      { cat: 'moveis', name: 'Colchão casal king size',  vol: 1.20, emoji: '🛌' },
-      { cat: 'moveis', name: 'Colchão casal padrão',     vol: 0.90, emoji: '🛌' },
-      { cat: 'moveis', name: 'Colchão casal queen size', vol: 1.00, emoji: '🛌' },
-      { cat: 'moveis', name: 'Colchão solteiro',         vol: 0.60, emoji: '🛌' },
-      { cat: 'moveis', name: 'Criado mudo',              vol: 0.30, emoji: '🗃️' },
-      { cat: 'moveis', name: 'Cristaleira',              vol: 1.20, emoji: '🏺' },
-      { cat: 'moveis', name: 'Guarda-roupa desmontado',  vol: 1.00, emoji: '📦' },
-      { cat: 'moveis', name: 'Guarda-roupa montado',     vol: 2.50, emoji: '🚪' },
-      { cat: 'moveis', name: 'Mesa 4 lugares',           vol: 1.20, emoji: '🍽️' },
-      { cat: 'moveis', name: 'Mesa 6 lugares',           vol: 1.80, emoji: '🍽️' },
-      { cat: 'moveis', name: 'Mesa 8 lugares',           vol: 2.40, emoji: '🍽️' },
-      { cat: 'moveis', name: 'Mesa de centro',           vol: 0.40, emoji: '🪵' },
-      { cat: 'moveis', name: 'Painel para TV',           vol: 0.50, emoji: '🖼️' },
-      { cat: 'moveis', name: 'Poltrona',                 vol: 0.80, emoji: '🛋️' },
-      { cat: 'moveis', name: 'Rack',                     vol: 0.70, emoji: '📺' },
-      { cat: 'moveis', name: 'Sofá 2 lugares',           vol: 1.50, emoji: '🛋️' },
-      { cat: 'moveis', name: 'Sofá 3 lugares',           vol: 2.00, emoji: '🛋️' },
+      { cat: 'moveis', name: 'Aparador',                 m2: 0.55, emoji: '🗄️' },
+      { cat: 'moveis', name: 'Cadeira',                  m2: 0.25, emoji: '🪑' },
+      { cat: 'moveis', name: 'Cama casal king size',     m2: 1.20, emoji: '🛏️' },
+      { cat: 'moveis', name: 'Cama casal padrão',        m2: 1.00, emoji: '🛏️' },
+      { cat: 'moveis', name: 'Cama casal queen size',    m2: 1.10, emoji: '🛏️' },
+      { cat: 'moveis', name: 'Cama solteiro',            m2: 0.80, emoji: '🛏️' },
+      { cat: 'moveis', name: 'Colchão casal king size',  m2: 0.65, emoji: '🛌' },
+      { cat: 'moveis', name: 'Colchão casal padrão',     m2: 0.50, emoji: '🛌' },
+      { cat: 'moveis', name: 'Colchão casal queen size', m2: 0.60, emoji: '🛌' },
+      { cat: 'moveis', name: 'Colchão solteiro',         m2: 0.40, emoji: '🛌' },
+      { cat: 'moveis', name: 'Criado mudo',              m2: 0.25, emoji: '🗃️' },
+      { cat: 'moveis', name: 'Cristaleira',              m2: 0.60, emoji: '🏺' },
+      { cat: 'moveis', name: 'Guarda-roupa desmontado',  m2: 0.60, emoji: '📦' },
+      { cat: 'moveis', name: 'Guarda-roupa montado',     m2: 1.20, emoji: '🚪' },
+      { cat: 'moveis', name: 'Mesa 4 lugares',           m2: 1.00, emoji: '🍽️' },
+      { cat: 'moveis', name: 'Mesa 6 lugares',           m2: 1.40, emoji: '🍽️' },
+      { cat: 'moveis', name: 'Mesa 8 lugares',           m2: 1.80, emoji: '🍽️' },
+      { cat: 'moveis', name: 'Mesa de centro',           m2: 0.50, emoji: '🪵' },
+      { cat: 'moveis', name: 'Painel para TV',           m2: 0.40, emoji: '🖼️' },
+      { cat: 'moveis', name: 'Poltrona',                 m2: 0.70, emoji: '🛋️' },
+      { cat: 'moveis', name: 'Rack',                     m2: 0.70, emoji: '📺' },
+      { cat: 'moveis', name: 'Sofá 2 lugares',           m2: 1.40, emoji: '🛋️' },
+      { cat: 'moveis', name: 'Sofá 3 lugares',           m2: 1.90, emoji: '🛋️' },
       // Escritório
-      { cat: 'escritorio', name: 'Arquivo de aço',        vol: 0.70, emoji: '🗄️' },
-      { cat: 'escritorio', name: 'Arquivo mapoteca',      vol: 0.90, emoji: '🗺️' },
-      { cat: 'escritorio', name: 'Balcão',                vol: 1.00, emoji: '🪟' },
-      { cat: 'escritorio', name: 'Cadeira de escritório', vol: 0.40, emoji: '💺' },
-      { cat: 'escritorio', name: 'Cofre pequeno',         vol: 0.20, emoji: '🔐' },
-      { cat: 'escritorio', name: 'Computador',            vol: 0.15, emoji: '🖥️' },
-      { cat: 'escritorio', name: 'Escrivaninha',          vol: 0.90, emoji: '🪶' },
-      { cat: 'escritorio', name: 'Estante de aço',        vol: 0.80, emoji: '📚' },
-      { cat: 'escritorio', name: 'Impressora',            vol: 0.10, emoji: '🖨️' },
-      { cat: 'escritorio', name: 'Mesa',                  vol: 1.00, emoji: '🪑' },
+      { cat: 'escritorio', name: 'Arquivo de aço',        m2: 0.35, emoji: '🗄️' },
+      { cat: 'escritorio', name: 'Arquivo mapoteca',      m2: 0.80, emoji: '🗺️' },
+      { cat: 'escritorio', name: 'Balcão',                m2: 0.70, emoji: '🪟' },
+      { cat: 'escritorio', name: 'Cadeira de escritório', m2: 0.35, emoji: '💺' },
+      { cat: 'escritorio', name: 'Cofre pequeno',         m2: 0.20, emoji: '🔐' },
+      { cat: 'escritorio', name: 'Computador',            m2: 0.15, emoji: '🖥️' },
+      { cat: 'escritorio', name: 'Escrivaninha',          m2: 0.80, emoji: '🪶' },
+      { cat: 'escritorio', name: 'Estante de aço',        m2: 0.35, emoji: '📚' },
+      { cat: 'escritorio', name: 'Impressora',            m2: 0.15, emoji: '🖨️' },
+      { cat: 'escritorio', name: 'Mesa',                  m2: 0.90, emoji: '🪑' },
       // Eletrodomésticos
-      { cat: 'eletro', name: 'Ar condicionado',      vol: 0.25, emoji: '❄️' },
-      { cat: 'eletro', name: 'Fogão 4 bocas',        vol: 0.50, emoji: '🍳' },
-      { cat: 'eletro', name: 'Fogão 6 bocas',        vol: 0.70, emoji: '🍳' },
-      { cat: 'eletro', name: 'Freezer horizontal',   vol: 1.00, emoji: '🧊' },
-      { cat: 'eletro', name: 'Freezer vertical',     vol: 0.80, emoji: '🧊' },
-      { cat: 'eletro', name: 'Geladeira',            vol: 1.00, emoji: '🧺' },
-      { cat: 'eletro', name: 'Geladeira side by side', vol: 1.60, emoji: '🧺' },
-      { cat: 'eletro', name: 'Lava louça',           vol: 0.50, emoji: '🫧' },
-      { cat: 'eletro', name: 'Máquina de lavar',     vol: 0.60, emoji: '🌀' },
-      { cat: 'eletro', name: 'Microondas',           vol: 0.15, emoji: '♨️' },
-      { cat: 'eletro', name: 'Televisão 32"',        vol: 0.15, emoji: '📺' },
-      { cat: 'eletro', name: 'Televisão 65"',        vol: 0.40, emoji: '📺' },
-      // Diversos
-      { cat: 'diversos', name: 'Caixa arquivo morto', vol: 0.05, emoji: '🗂️' },
-      { cat: 'diversos', name: 'Caixa de som',        vol: 0.15, emoji: '🔊' },
-      { cat: 'diversos', name: 'Caixa grande',        vol: 0.20, emoji: '📦' },
-      { cat: 'diversos', name: 'Caixa média',         vol: 0.12, emoji: '📦' },
-      { cat: 'diversos', name: 'Caixa pequena',       vol: 0.06, emoji: '📦' },
+      { cat: 'eletro', name: 'Ar condicionado',        m2: 0.25, emoji: '❄️' },
+      { cat: 'eletro', name: 'Fogão 4 bocas',          m2: 0.35, emoji: '🍳' },
+      { cat: 'eletro', name: 'Fogão 6 bocas',          m2: 0.50, emoji: '🍳' },
+      { cat: 'eletro', name: 'Freezer horizontal',     m2: 0.90, emoji: '🧊' },
+      { cat: 'eletro', name: 'Freezer vertical',       m2: 0.45, emoji: '🧊' },
+      { cat: 'eletro', name: 'Geladeira',              m2: 0.45, emoji: '🧺' },
+      { cat: 'eletro', name: 'Geladeira side by side', m2: 0.85, emoji: '🧺' },
+      { cat: 'eletro', name: 'Lava louça',             m2: 0.40, emoji: '🫧' },
+      { cat: 'eletro', name: 'Máquina de lavar',       m2: 0.40, emoji: '🌀' },
+      { cat: 'eletro', name: 'Microondas',             m2: 0.20, emoji: '♨️' },
+      { cat: 'eletro', name: 'Televisão 32"',          m2: 0.15, emoji: '📺' },
+      { cat: 'eletro', name: 'Televisão 65"',          m2: 0.30, emoji: '📺' },
+      // Diversos (caixas são empilháveis — área reduzida)
+      { cat: 'diversos', name: 'Caixa arquivo morto', m2: 0.05, emoji: '🗂️' },
+      { cat: 'diversos', name: 'Caixa de som',        m2: 0.15, emoji: '🔊' },
+      { cat: 'diversos', name: 'Caixa grande',        m2: 0.12, emoji: '📦' },
+      { cat: 'diversos', name: 'Caixa média',         m2: 0.08, emoji: '📦' },
+      { cat: 'diversos', name: 'Caixa pequena',       m2: 0.05, emoji: '📦' },
     ];
 
     const counts = new Array(ITEMS.length).fill(0);
@@ -946,7 +946,7 @@
           <div class="item-card__top">
             <span class="item-card__emoji">${it.emoji}</span>
             <span class="item-card__name">${it.name}
-              <span class="item-card__vol">≈ ${fmt(it.vol)} m³</span>
+              <span class="item-card__vol">≈ ${fmt(it.m2)} m²</span>
             </span>
           </div>
           <div class="stepper">
@@ -994,9 +994,9 @@
 
     function categoryTotals() {
       const totals = {};
-      CATEGORIES.forEach(c => totals[c.id] = { vol: 0, items: 0 });
+      CATEGORIES.forEach(c => totals[c.id] = { m2: 0, items: 0 });
       ITEMS.forEach((it, i) => {
-        totals[it.cat].vol   += it.vol * counts[i];
+        totals[it.cat].m2    += it.m2 * counts[i];
         totals[it.cat].items += counts[i];
       });
       return totals;
@@ -1004,9 +1004,9 @@
 
     function recommendation(total) {
       if (total <= 0)  return 'Adicione itens para ver a sugestão';
-      // Considera empilhamento até ~2,2 m de altura com folga de manuseio
-      const area = Math.max(1, Math.ceil(total / 2.2 * 1.25));
-      return `Box a partir de ${area} m² (${fmt(total)} m³)`;
+      // Folga de ~15% para circulação e manuseio dos itens
+      const area = Math.max(1, Math.ceil(total * 1.15));
+      return `Box a partir de ${area} m²`;
     }
 
     function renderSummaryRows() {
@@ -1014,7 +1014,7 @@
         <div class="summary-row">
           <span class="summary-row__dot" style="background:${c.color}"></span>
           <span class="summary-row__label">${c.label}</span>
-          <span class="summary-row__value" id="rowVol-${c.id}">0,00 m³</span>
+          <span class="summary-row__value" id="rowVol-${c.id}">0,00 m²</span>
         </div>
         <div class="summary-bar"><div class="summary-bar__fill" id="rowBar-${c.id}" style="background:${c.color}"></div></div>
       `).join('');
@@ -1024,12 +1024,12 @@
     function updateSummary() {
       const totals = categoryTotals();
       let totalVol = 0, totalItems = 0;
-      CATEGORIES.forEach(c => { totalVol += totals[c.id].vol; totalItems += totals[c.id].items; });
+      CATEGORIES.forEach(c => { totalVol += totals[c.id].m2; totalItems += totals[c.id].items; });
 
       CATEGORIES.forEach(c => {
-        document.getElementById(`rowVol-${c.id}`).textContent = `${fmt(totals[c.id].vol)} m³`;
+        document.getElementById(`rowVol-${c.id}`).textContent = `${fmt(totals[c.id].m2)} m²`;
         document.getElementById(`rowBar-${c.id}`).style.width =
-          totalVol > 0 ? `${(totals[c.id].vol / totalVol) * 100}%` : '0%';
+          totalVol > 0 ? `${(totals[c.id].m2 / totalVol) * 100}%` : '0%';
         const badge = document.getElementById(`tabCount-${c.id}`);
         badge.textContent = totals[c.id].items;
         badge.classList.toggle('is-visible', totals[c.id].items > 0);
@@ -1060,7 +1060,7 @@
 
     function buildItemList() {
       return ITEMS
-        .map((it, i) => counts[i] > 0 ? `${counts[i]}x ${it.name} (${fmt(it.vol * counts[i])} m³)` : null)
+        .map((it, i) => counts[i] > 0 ? `${counts[i]}x ${it.name} (${fmt(it.m2 * counts[i])} m²)` : null)
         .filter(Boolean);
     }
 
@@ -1080,10 +1080,10 @@
       if (!okNome || !okEmail || !okTel) return;
 
       const totals  = categoryTotals();
-      const total   = CATEGORIES.reduce((s, c) => s + totals[c.id].vol, 0);
+      const total   = CATEGORIES.reduce((s, c) => s + totals[c.id].m2, 0);
       const itens   = buildItemList();
       const resumo  = itens.length
-        ? `Itens:\n- ${itens.join('\n- ')}\n\nTotal estimado: ${fmt(total)} m³\n${recommendation(total)}`
+        ? `Itens:\n- ${itens.join('\n- ')}\n\nTotal estimado: ${fmt(total)} m²\n${recommendation(total)}`
         : 'Nenhum item selecionado na calculadora.';
 
       // Envia a lead por email em background (mesmo endpoint do site)
