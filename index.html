@@ -90,6 +90,28 @@
 
     .header__logo { height: 34px; width: auto; display: block; }
 
+    .header__nav {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .header__nav-link {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--deep-navy);
+      text-decoration: none;
+      padding: 8px 12px;
+      border-radius: var(--r-btn);
+      transition: background .15s, color .15s;
+    }
+    .header__nav-link:hover { background: var(--light-ice); color: var(--brand-blue); }
+
+    @media (max-width: 480px) {
+      .header__nav { gap: 8px; }
+      .header__nav-link { font-size: 13.5px; padding: 8px 8px; }
+    }
+
     /* ─── BUTTONS ────────────────────────────────────────────── */
     .btn {
       display: inline-flex;
@@ -670,7 +692,10 @@
     <div class="container">
       <div class="header__inner">
         <img src="assets/logo%20segura%20box.png" alt="SeguraBox" class="header__logo">
-        <a href="#contato" class="btn btn--primary">Quero investir</a>
+        <nav class="header__nav">
+          <a href="/calcular-tamanho" class="header__nav-link">Calcule seu box</a>
+          <a href="#contato" class="btn btn--primary">Quero investir</a>
+        </nav>
       </div>
     </div>
   </header>

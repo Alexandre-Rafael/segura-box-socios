@@ -6,6 +6,7 @@
     { "source": "/", "destination": "/seja-investidor", "permanent": false }
   ],
   "rewrites": [
-    { "source": "/seja-investidor", "destination": "/index.html" }
+    { "source": "/seja-investidor", "destination": "/index.html" },
+    { "source": "/calcular-tamanho", "destination": "/calculadora.html" }
   ]
 }
