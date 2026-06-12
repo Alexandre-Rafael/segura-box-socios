@@ -39,6 +39,8 @@
       --r-btn:  10px;
     }
 
+    html, body { overflow-x: clip; }
+
     body {
       font-family: var(--font);
       color: var(--deep-navy);
@@ -222,7 +224,7 @@
     /* Grid de itens */
     .calc-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 12px;
     }
     .calc-empty {
@@ -272,6 +274,9 @@
     }
     .item-card.is-selected .item-card__emoji { transform: scale(1.06); }
     .item-card__name {
+      flex: 1;
+      min-width: 0;
+      overflow-wrap: break-word;
       font-size: 13.5px;
       font-weight: 600;
       line-height: 1.3;
@@ -653,13 +658,13 @@
       .calc-layout { grid-template-columns: 1fr; }
       .summary { position: static; }
       .mobile-bar { display: flex; }
-      .calc-grid { grid-template-columns: repeat(3, 1fr); }
+      .calc-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
     }
     @media (max-width: 720px) {
       .container { padding: 0 16px; }
       .calc-hero { padding: 110px 0 28px; }
       .calc-panel { padding: 16px; }
-      .calc-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+      .calc-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
       .calc-tabs { overflow-x: auto; flex-wrap: nowrap; padding-bottom: 4px; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
       .calc-tabs::-webkit-scrollbar { display: none; }
       .calc-layout { padding-bottom: 110px; }
