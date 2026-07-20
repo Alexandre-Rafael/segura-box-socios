@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Seja sócio investidor da SeguraBox — o mercado de self storage está em plena expansão no Brasil. Conheça a oportunidade.">
+  <meta name="description" content="Seja sócio investidor da SeguraBox — o mercado de self storage está em plena expansão no Brasil. Investimento a partir de R$150.000. Conheça a oportunidade.">
   <title>SeguraBox — Seja Sócio Investidor</title>
   <!-- Facebook Pixel -->
   <script>
@@ -712,7 +712,7 @@
 
           <div class="hero__badge reveal">
             <span class="hero__badge-dot"></span>
-            Oportunidade de Parceria
+            Oportunidade de Parceria — a partir de R$150 mil
           </div>
 
           <h1 class="hero__headline reveal reveal-d1">
@@ -721,6 +721,7 @@
 
           <p class="hero__sub reveal reveal-d2">
             O mercado de self storage está em plena expansão no Brasil. Faça parte com uma estrutura sólida, rentável e em crescimento acelerado.
+            <br><strong style="color:#fff;">Investimento a partir de R$150.000.</strong>
           </p>
 
           <div class="reveal reveal-d3">
@@ -757,6 +758,15 @@
                 </svg>
               </div>
               Retorno previsível
+            </div>
+            <div class="hero__trust-item">
+              <div class="hero__trust-icon" style="background:rgba(61,184,122,.12);">
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                  <circle cx="6" cy="6" r="4.2" stroke="#3DB87A" stroke-width="1.4"/>
+                  <path d="M7.4 4.4H5.4a.9.9 0 000 1.8h1.2a.9.9 0 010 1.8H4.6M6 3.2v5.6" stroke="#3DB87A" stroke-width="1.2" stroke-linecap="round"/>
+                </svg>
+              </div>
+              Investimento a partir de R$150 mil
             </div>
           </div>
 
@@ -877,7 +887,11 @@
             Quero saber mais sobre essa oportunidade
           </h2>
           <p class="form-section__sub reveal reveal-d2">
-            Preencha o formulário e nossa equipe entrará em contato.
+            Investimento a partir de R$150.000.<br>
+            Preencha o formulário e nossa equipe entrará em contato — ou fale direto no WhatsApp
+            <a href="https://wa.me/5534999853186?text=Ol%C3%A1%2C%20Matheus!%20Tenho%20150mil%20ou%20mais%20e%20tenho%20interesse%20em%20investir%20na%20SeguraBox"
+               target="_blank" rel="noopener noreferrer"
+               style="color:#fff;font-weight:700;white-space:nowrap;">(34) 99985-3186</a>.
           </p>
 
           <div class="form-card reveal reveal-d3">
@@ -910,7 +924,7 @@
               </div>
 
               <div class="form-field">
-                <label for="faixa" class="form-label">Faixa de investimento disponível</label>
+                <label for="faixa" class="form-label">Faixa de investimento disponível <span style="opacity:.5;font-weight:400;text-transform:none;letter-spacing:0;">(mínimo R$150.000)</span></label>
                 <div class="form-select-wrap">
                   <select id="faixa" name="faixa" class="form-select">
                     <option value="" disabled selected>Selecione uma faixa</option>
@@ -956,7 +970,8 @@
   </main>
 
   <!-- ─── FLOATING WHATSAPP ──────────────────────────────────── -->
-  <a href="https://wa.me/5534999853186" target="_blank" rel="noopener noreferrer"
+  <a href="https://wa.me/5534999853186?text=Ol%C3%A1%2C%20Matheus!%20Tenho%20150mil%20ou%20mais%20e%20tenho%20interesse%20em%20investir%20na%20SeguraBox"
+     target="_blank" rel="noopener noreferrer"
      class="fab-wa" aria-label="Fale conosco no WhatsApp">
     <span class="fab-wa__pulse"></span>
     <svg width="28" height="28" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
@@ -1036,7 +1051,9 @@
 
     document.getElementById('email').addEventListener('input', () => validateEmail('email', 'email-error'));
 
-    const WA_LINK = 'https://wa.me/5534999853186';
+    const WA_NUMERO = '5534999853186';
+    const WA_MSG    = 'Olá, Matheus! Tenho 150mil ou mais e tenho interesse em investir na SeguraBox';
+    const WA_LINK   = `https://wa.me/${WA_NUMERO}?text=${encodeURIComponent(WA_MSG)}`;
 
     form.addEventListener('submit', e => {
       e.preventDefault();
