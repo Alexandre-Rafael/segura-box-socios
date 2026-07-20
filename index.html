@@ -209,22 +209,29 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      background: var(--light-ice);
-      color: var(--brand-blue);
+      background: var(--brand-blue);
+      color: #fff;
+      border: 1px solid rgba(255,255,255,.35);
+      box-shadow: 0 6px 20px rgba(10,31,68,.28);
       border-radius: var(--r-card);
-      padding: 8px 14px;
-      font-size: 12px;
-      font-weight: 600;
+      padding: 9px 16px;
+      font-size: 12.5px;
+      font-weight: 700;
       letter-spacing: .06em;
       text-transform: uppercase;
       margin-bottom: 28px;
+    }
+
+    .hero__badge strong {
+      font-weight: 900;
+      color: #FFD75E;
     }
 
     .hero__badge-dot {
       width: 6px;
       height: 6px;
       border-radius: 50%;
-      background: var(--brand-blue);
+      background: #fff;
       flex-shrink: 0;
     }
 
@@ -712,7 +719,7 @@
 
           <div class="hero__badge reveal">
             <span class="hero__badge-dot"></span>
-            Oportunidade de Parceria — a partir de R$150 mil
+            Oportunidade de Parceria — a partir de <strong>R$150 mil</strong>
           </div>
 
           <h1 class="hero__headline reveal reveal-d1">
@@ -721,7 +728,7 @@
 
           <p class="hero__sub reveal reveal-d2">
             O mercado de self storage está em plena expansão no Brasil. Faça parte com uma estrutura sólida, rentável e em crescimento acelerado.
-            <br><strong style="color:#fff;">Investimento a partir de R$150.000.</strong>
+            <br><strong style="color:var(--deep-navy);font-weight:800;">Investimento a partir de R$150.000.</strong>
           </p>
 
           <div class="reveal reveal-d3">
